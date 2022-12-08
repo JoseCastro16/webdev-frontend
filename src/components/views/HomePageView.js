@@ -8,6 +8,11 @@ const HomePageView = () => {
       <Link to={"/employees"} className="employee-card-link">
         All Employees
       </Link>
+      <br />
+      <p>Take a look at our list of Tasks:</p>
+      <Link to={"/tasks"} className="employee-card-link">
+        All Tasks
+      </Link>
     </div>
   );
 };
