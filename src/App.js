@@ -5,6 +5,8 @@ import AllEmployeesContainer from "./components/containers/AllEmployeesContainer
 import AllTasksContainer from "./components/containers/AllTasksContainer";
 import TaskContainer from "./components/containers/TaskContainer";
 import EmployeeContainer from "./components/containers/EmployeeContainer";
+import EditTaskContainer from "./components/containers/EditTaskContainer";
+import EditEmployeeContainer from "./components/containers/EditEmployeeContainer";
 
 function App() {
   return (
@@ -16,6 +18,12 @@ function App() {
           <Route exact path="/tasks" component={AllTasksContainer} />
           <Route exact path="/task/:id" component={TaskContainer} />
           <Route exact path="/employee/:id" component={EmployeeContainer} />
+          <Route exact path="/edittask/:id" component={EditTaskContainer} />
+          <Route
+            exact
+            path="/editemployee/:id"
+            component={EditEmployeeContainer}
+          />
         </Switch>
       </div>
     </>
