@@ -1,0 +1,80 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  text-align: center;
+  color: aliceblue;
+}
+
+.nav {
+  background-color: #5596ab;
+  /* background-color: aqua; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.site-title {
+  font-size: 2.5rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+.nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-link {
+  color: inherit;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  height: 100%;
+  display: flex;
+  padding: 0.25rem;
+}
+
+.nav li:hover {
+  background-color: #777;
+}
+
+.employee-card-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.employee-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #0c1ba4;
+  text-decoration: none;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+
+.employee-card-link {
+  text-decoration: none;
+  color: aliceblue;
+}
+
+.employee-card:hover {
+  color: #777;
+}
+
+.icon-container {
+  display: "flex";
+  justify-content: "flex-end";
+}

@@ -7,10 +7,12 @@ import TaskContainer from "./components/containers/TaskContainer";
 import EmployeeContainer from "./components/containers/EmployeeContainer";
 import EditTaskContainer from "./components/containers/EditTaskContainer";
 import EditEmployeeContainer from "./components/containers/EditEmployeeContainer";
+import NavBar from "./components/NavBar";
 
 function App() {
   return (
     <>
+      <NavBar />
       <div className="App">
         <Switch>
           <Route exact path="/" component={HomePageContainer} />
