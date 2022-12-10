@@ -5,20 +5,27 @@ import TaskCard from "../TaskCard";
 const AllTasksView = (props) => {
   if (!props.allTasks.length) {
     return (
-      <div>
+      <div style={{ fontSize: "2rem" }}>
         There are no tasks.
         <br />
-        <Link to={"/"}> Go To Home</Link>
+        <Link to={"/"} style={{ fontSize: "2rem", color: "white" }}>
+          {" "}
+          Go To Home
+        </Link>
       </div>
     );
   }
 
   return (
     <div className="employee-card-container">
-      <h1>All Tasks :</h1>
-      {props.allTasks.map((task) => {
-        return <TaskCard key={task.id} task={task} />;
-      })}
+      <h1 style={{ textDecoration: "underline" }}>All Tasks</h1>
+      {props.allTasks
+        .sort(function (a, b) {
+          return a.id - b.id;
+        })
+        .map((task) => {
+          return <TaskCard key={task.id} task={task} />;
+        })}
     </div>
   );
 };

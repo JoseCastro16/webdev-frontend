@@ -17,6 +17,7 @@ const EmployeeView = (props) => {
         </Link>
       </div>
       <div>
+        <h1 style={{ textDecoration: "underline" }}>{employee.id}</h1>
         <h1>First Name: {employee.firstname}</h1>
         <h1>Last Name: {employee.lastname}</h1>
         <h1>Department: {employee.department}</h1>
