@@ -8,13 +8,19 @@ export default function EmployeeCard(props) {
   return (
     <Link to={"/employee/" + props.employee.id} className="employee-card-link">
       <div className="employee-card">
-        <h1>{props.employee.id}.</h1>
-        <h1>{props.employee.firstname + " " + props.employee.lastname}</h1>
-        {props.employee.department ? (
-          <h2>{props.employee.department}</h2>
-        ) : (
-          <h2>No Department</h2>
-        )}
+        <div style={{ width: "1rem" }}>
+          <h1>{props.employee.id}.</h1>
+        </div>
+        <div style={{ width: "2rem" }}>
+          <h1>{props.employee.firstname + " " + props.employee.lastname}</h1>
+        </div>
+        <div style={{ width: "2rem" }}>
+          {props.employee.department ? (
+            <h1>{props.employee.department}</h1>
+          ) : (
+            <h1>No Department</h1>
+          )}
+        </div>
       </div>
     </Link>
   );

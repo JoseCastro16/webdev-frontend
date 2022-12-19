@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong");
+
 * {
   box-sizing: border-box;
 }
@@ -5,13 +7,15 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #121212;
+  background-color: #e2d1c3;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   text-align: center;
-  color: aliceblue;
+  color: black;
 }
 
 .nav {
-  background-color: #5596ab;
+  background-image: linear-gradient(to right, #434343 0%, black 100%);
+  color: white;
   /* background-color: aqua; */
   display: flex;
   justify-content: space-between;
@@ -59,15 +63,15 @@ body {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  background-color: #0c1ba4;
   text-decoration: none;
   border-radius: 1rem;
   margin-bottom: 1rem;
+  border-bottom: solid black 1px;
 }
 
 .employee-card-link {
   text-decoration: none;
-  color: aliceblue;
+  color: black;
 }
 
 .employee-card:hover {
@@ -77,4 +81,28 @@ body {
 .icon-container {
   display: "flex";
   justify-content: "flex-end";
+}
+
+.one h1 {
+  text-align: center;
+  text-transform: uppercase;
+  padding-bottom: 5px;
+}
+
+.one h1:after {
+  width: 100px;
+  height: 1px;
+  display: block;
+  content: "";
+  position: relative;
+  margin-top: 25px;
+  left: 50%;
+  margin-left: -50px;
+  background-color: #b80000;
+}
+
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

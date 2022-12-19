@@ -17,22 +17,26 @@ const AllEmployeesView = (props) => {
   }
 
   return (
-    <div className="employee-card-container">
-      <h1 style={{ textDecoration: "underline" }}>All Employees</h1>
-      {props.allEmployees
-        .sort(function (a, b) {
-          return a.id - b.id;
-        })
-        .map((employee) => {
-          return (
-            <EmployeeCard
-              key={employee.id}
-              employee={employee}
-              deleteEmployee={props.deleteEmployee}
-            />
-          );
-        })}
-    </div>
+    <>
+      <div className="one">
+        <h1>Employees</h1>
+      </div>
+      <div className="employee-card-container">
+        {props.allEmployees
+          .sort(function (a, b) {
+            return a.id - b.id;
+          })
+          .map((employee) => {
+            return (
+              <EmployeeCard
+                key={employee.id}
+                employee={employee}
+                deleteEmployee={props.deleteEmployee}
+              />
+            );
+          })}
+      </div>
+    </>
   );
 };
 

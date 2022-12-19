@@ -73,17 +73,15 @@ class EditTaskContainer extends Component {
           }}
         >
           <Link to={`/task/` + this.props.task.id}>
-            <BiArrowBack color="white" size={40} />
+            <BiArrowBack color="black" size={40} />
           </Link>
         </div>
-        <h1>Edit Task</h1>
+        <h1 style={{ fontSize: "2.5rem" }}>Edit Task</h1>
         <form
           style={{ textAlign: "center" }}
           onSubmit={(e) => this.handleSubmit(e)}
         >
-          <label style={{ color: "white", fontWeight: "bold" }}>
-            Description:{" "}
-          </label>
+          <label style={{ fontWeight: "bold" }}>Description: </label>
           <input
             type="text"
             name="description"
@@ -92,9 +90,7 @@ class EditTaskContainer extends Component {
           />
           <br />
 
-          <label style={{ color: "white", fontWeight: "bold" }}>
-            Priority:{" "}
-          </label>
+          <label style={{ fontWeight: "bold" }}>Priority: </label>
           <input
             type="text"
             name="priority"
@@ -103,7 +99,7 @@ class EditTaskContainer extends Component {
           />
           <br />
 
-          <label style={{ color: "white", fontWeight: "bold" }}>Status: </label>
+          <label style={{ fontWeight: "bold" }}>Status: </label>
           <input
             type="text"
             name="status"
@@ -112,9 +108,7 @@ class EditTaskContainer extends Component {
           />
           <br />
 
-          <label style={{ color: "white", fontWeight: "bold" }}>
-            EmployeeId:{" "}
-          </label>
+          <label style={{ fontWeight: "bold" }}>EmployeeId: </label>
           <input
             type="text"
             name="employeeId"

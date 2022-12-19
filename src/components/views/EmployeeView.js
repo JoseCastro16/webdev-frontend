@@ -13,17 +13,24 @@ const EmployeeView = (props) => {
         }}
       >
         <Link to={`/employees`}>
-          <BiArrowBack color="white" size={40} />
+          <BiArrowBack color="black" size={40} />
         </Link>
       </div>
       <div>
-        <h1 style={{ textDecoration: "underline" }}>{employee.id}</h1>
-        <h1>First Name: {employee.firstname}</h1>
-        <h1>Last Name: {employee.lastname}</h1>
-        <h1>Department: {employee.department}</h1>
+        <h1 style={{}}>{employee.id}</h1>
+        <h1>
+          {employee.firstname} {" " + employee.lastname}
+        </h1>
+        {employee.department ? (
+          <h1>{employee.department}</h1>
+        ) : (
+          <h1>No Department</h1>
+        )}
+
         <Link to={`/editemployee/${employee.id}`}>
-          <BiEdit color="white" size={40} style={{ marginRight: 10 }} />
+          <BiEdit color="black" size={40} style={{ marginRight: 40 }} />
         </Link>
+        <BiTrash color="black" size={40} />
       </div>
     </div>
   );

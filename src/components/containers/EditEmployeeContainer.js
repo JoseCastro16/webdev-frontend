@@ -62,11 +62,22 @@ class EditEmployeeContainer extends Component {
 
     return (
       <div>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "flex-start",
+            marginLeft: 30,
+          }}
+        >
+          <Link to={`/employee/` + this.props.employee.id}>
+            <BiArrowBack color="black" size={40} />
+          </Link>
+        </div>
         <form
           style={{ textAlign: "center" }}
           onSubmit={(e) => this.handleSubmit(e)}
         >
-          <label style={{ color: "white", fontWeight: "bold" }}>
+          <label style={{ color: "black", fontWeight: "bold" }}>
             First Name:{" "}
           </label>
           <input
@@ -77,7 +88,7 @@ class EditEmployeeContainer extends Component {
           />
           <br />
 
-          <label style={{ color: "white", fontWeight: "bold" }}>
+          <label style={{ color: "black", fontWeight: "bold" }}>
             Last Name:{" "}
           </label>
           <input
@@ -88,7 +99,7 @@ class EditEmployeeContainer extends Component {
           />
           <br />
 
-          <label style={{ color: "white", fontWeight: "bold" }}>
+          <label style={{ color: "black", fontWeight: "bold" }}>
             Department:{" "}
           </label>
           <input
