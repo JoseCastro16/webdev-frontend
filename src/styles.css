@@ -106,3 +106,16 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
+
+.add-container {
+  display: flex;
+  flex-direction: row;
+  font-size: 1.2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-container:hover {
+  color: #777;
+  cursor: pointer;
+}

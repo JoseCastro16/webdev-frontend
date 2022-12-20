@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import EmployeeCard from "../EmployeeCard";
+import { BiPlus } from "react-icons/bi";
 
 const AllEmployeesView = (props) => {
   if (!props.allEmployees.length) {
@@ -36,6 +37,15 @@ const AllEmployeesView = (props) => {
             );
           })}
       </div>
+      <Link
+        to={"/newemployee"}
+        style={{ textDecoration: "none", color: "black" }}
+      >
+        <div className="add-container">
+          <BiPlus size={"3rem"} />
+          <h1>Add Employee</h1>
+        </div>
+      </Link>
     </>
   );
 };
