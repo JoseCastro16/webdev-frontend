@@ -6,12 +6,17 @@ import { BiPlus } from "react-icons/bi";
 const AllEmployeesView = (props) => {
   if (!props.allEmployees.length) {
     return (
-      <div style={{ fontSize: "2rem" }}>
-        There are no employees.
+      <div>
+        <h1>There are currently no employees.</h1>
         <br />
-        <Link to={"/"} style={{ fontSize: "2rem", color: "white" }}>
-          {" "}
-          Go To Home
+        <Link
+          to={"/newemployee"}
+          style={{ textDecoration: "none", color: "black" }}
+        >
+          <div className="add-container">
+            <BiPlus size={"3rem"} />
+            <h1>Add Employee</h1>
+          </div>
         </Link>
       </div>
     );

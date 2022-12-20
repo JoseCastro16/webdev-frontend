@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchTaskThunk } from "../../store/thunks";
+import { fetchTaskThunk, deleteTaskThunk } from "../../store/thunks";
 import TaskView from "../views/TaskView";
 
 class TaskContainer extends Component {
@@ -9,7 +9,9 @@ class TaskContainer extends Component {
     this.props.fetchTask(this.props.match.params.id);
   }
   render() {
-    return <TaskView task={this.props.task} />;
+    return (
+      <TaskView task={this.props.task} deleteTask={this.props.deleteTask} />
+    );
   }
 }
 
@@ -24,6 +26,7 @@ const mapState = (state) => {
 const mapDispatch = (dispatch) => {
   return {
     fetchTask: (id) => dispatch(fetchTaskThunk(id)),
+    deleteTask: (id) => dispatch(deleteTaskThunk(id)),
   };
 };
 
