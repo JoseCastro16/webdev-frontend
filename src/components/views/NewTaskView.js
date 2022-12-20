@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { BiEdit, BiTrash, BiArrowBack } from "react-icons/bi";
 
-const NewEmployeeView = (props) => {
+const NewTaskView = (props) => {
   const { handleChange, handleSubmit, error } = props;
 
   return (
@@ -14,7 +14,7 @@ const NewEmployeeView = (props) => {
             marginLeft: 30,
           }}
         >
-          <Link to={`/employees`}>
+          <Link to={`/tasks`}>
             <BiArrowBack color="black" size={40} />
           </Link>
         </div>
@@ -27,38 +27,45 @@ const NewEmployeeView = (props) => {
               color: "#11153e",
             }}
           >
-            New Employee
+            New Task
           </h2>
         </div>
         <form style={{ textAlign: "center" }} onSubmit={(e) => handleSubmit(e)}>
           <label style={{ color: "#11153e", fontWeight: "bold" }}>
-            First Name:{" "}
+            Description:{" "}
           </label>
           <input
             type="text"
-            name="firstname"
+            name="description"
             onChange={(e) => handleChange(e)}
           />
           <br />
           <br />
 
           <label style={{ color: "#11153e", fontWeight: "bold" }}>
-            Last Name:{" "}
+            Priority:{" "}
           </label>
           <input
             type="text"
-            name="lastname"
+            name="priority"
             onChange={(e) => handleChange(e)}
           />
           <br />
           <br />
 
           <label style={{ color: "#11153e", fontWeight: "bold" }}>
-            Department:{" "}
+            Status :{" "}
+          </label>
+          <input type="text" name="status" onChange={(e) => handleChange(e)} />
+          <br />
+          <br />
+
+          <label style={{ color: "#11153e", fontWeight: "bold" }}>
+            EmployeeID :{" "}
           </label>
           <input
             type="text"
-            name="department"
+            name="employeeId"
             onChange={(e) => handleChange(e)}
           />
           <br />
@@ -74,4 +81,4 @@ const NewEmployeeView = (props) => {
   );
 };
 
-export default NewEmployeeView;
+export default NewTaskView;

@@ -8,6 +8,7 @@ import EmployeeContainer from "./components/containers/EmployeeContainer";
 import EditTaskContainer from "./components/containers/EditTaskContainer";
 import EditEmployeeContainer from "./components/containers/EditEmployeeContainer";
 import NewEmployeeContainer from "./components/containers/NewEmployeeContainer";
+import NewTaskContainer from "./components/containers/NewTaskContainer";
 import NavBar from "./components/NavBar";
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
             component={EditEmployeeContainer}
           />
           <Route exact path="/newemployee" component={NewEmployeeContainer} />
+          <Route exact path="/newtask" component={NewTaskContainer} />
         </Switch>
       </div>
     </>

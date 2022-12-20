@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import TaskCard from "../TaskCard";
+import { BiPlus } from "react-icons/bi";
 
 const AllTasksView = (props) => {
   if (!props.allTasks.length) {
@@ -26,6 +27,12 @@ const AllTasksView = (props) => {
         .map((task) => {
           return <TaskCard key={task.id} task={task} />;
         })}
+      <Link to={"/newtask"} style={{ textDecoration: "none", color: "black" }}>
+        <div className="add-container">
+          <BiPlus size={"3rem"} />
+          <h1>Add Task</h1>
+        </div>
+      </Link>
     </div>
   );
 };
