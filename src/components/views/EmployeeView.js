@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { BiEdit, BiTrash, BiArrowBack } from "react-icons/bi";
 
 const EmployeeView = (props) => {
-  const { employee } = props;
+  const { employee, deleteEmployee } = props;
   return (
     <div>
       <div
@@ -30,7 +30,13 @@ const EmployeeView = (props) => {
         <Link to={`/editemployee/${employee.id}`}>
           <BiEdit color="black" size={40} style={{ marginRight: 40 }} />
         </Link>
-        <BiTrash color="black" size={40} />
+        <Link to={`/employees`}>
+          <BiTrash
+            color="black"
+            size={40}
+            onClick={() => deleteEmployee(employee.id)}
+          />
+        </Link>
       </div>
     </div>
   );

@@ -9,9 +9,14 @@ const AllTasksView = (props) => {
       <div style={{ fontSize: "2rem" }}>
         There are no tasks.
         <br />
-        <Link to={"/"} style={{ fontSize: "2rem", color: "white" }}>
-          {" "}
-          Go To Home
+        <Link
+          to={"/newtask"}
+          style={{ textDecoration: "none", color: "black" }}
+        >
+          <div className="add-container">
+            <BiPlus size={"3rem"} />
+            <h1>Add Task</h1>
+          </div>
         </Link>
       </div>
     );

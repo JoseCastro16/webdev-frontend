@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { BiEdit, BiTrash, BiArrowBack } from "react-icons/bi";
 
 const TaskView = (props) => {
-  const { task } = props;
+  const { task, deleteTask } = props;
   return (
     <div>
       <div
@@ -27,9 +27,15 @@ const TaskView = (props) => {
           <h1>Unassigned</h1>
         )}
         <Link to={`/edittask/${task.id}`}>
-          <BiEdit color="black" size={40} style={{ marginRight: 10 }} />
+          <BiEdit color="black" size={40} style={{ marginRight: 40 }} />
         </Link>
-        <BiTrash color="black" size={40} />
+        <Link to={"/tasks"}>
+          <BiTrash
+            color="black"
+            size={40}
+            onClick={() => deleteTask(task.id)}
+          />
+        </Link>
       </div>
     </div>
   );
