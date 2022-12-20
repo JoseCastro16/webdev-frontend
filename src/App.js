@@ -7,6 +7,7 @@ import TaskContainer from "./components/containers/TaskContainer";
 import EmployeeContainer from "./components/containers/EmployeeContainer";
 import EditTaskContainer from "./components/containers/EditTaskContainer";
 import EditEmployeeContainer from "./components/containers/EditEmployeeContainer";
+import NewEmployeeContainer from "./components/containers/NewEmployeeContainer";
 import NavBar from "./components/NavBar";
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
             path="/editemployee/:id"
             component={EditEmployeeContainer}
           />
+          <Route exact path="/newemployee" component={NewEmployeeContainer} />
         </Switch>
       </div>
     </>
