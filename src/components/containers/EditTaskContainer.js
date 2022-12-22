@@ -152,13 +152,11 @@ class EditTaskContainer extends Component {
                 <option value={"Staff"}>Staff (current)</option>
               )}
               {this.props.allEmployees.map((employee) => {
-                if (employee.id !== this.props.employee.id) {
-                  return (
-                    <option value={employee.id} key={employee.id}>
-                      {employee.firstname + " " + employee.lastname}
-                    </option>
-                  );
-                }
+                return (
+                  <option value={employee.id} key={employee.id}>
+                    {employee.firstname + " " + employee.lastname}
+                  </option>
+                );
               })}
               {this.props.task.employee !== null && (
                 <option value={"Staff"}>Staff</option>
