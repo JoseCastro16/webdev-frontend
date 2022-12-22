@@ -22,7 +22,12 @@ const TaskView = (props) => {
         <h1> {task.status}</h1>
         <h1> {task.priority}</h1>
         {task.employee ? (
-          <h1>{task.employee.firstname + " " + task.employee.lastname} </h1>
+          <Link
+            to={"/employee/" + task.employee.id}
+            style={{ color: "blue", textDecoration: "none" }}
+          >
+            <h1>{task.employee.firstname + " " + task.employee.lastname} </h1>
+          </Link>
         ) : (
           <h1>Unassigned</h1>
         )}

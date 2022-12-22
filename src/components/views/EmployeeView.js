@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { BiEdit, BiTrash, BiArrowBack } from "react-icons/bi";
+import TaskCard from "../TaskCard";
 
 const EmployeeView = (props) => {
   const { employee, deleteEmployee } = props;
@@ -37,6 +38,22 @@ const EmployeeView = (props) => {
             onClick={() => deleteEmployee(employee.id)}
           />
         </Link>
+      </div>
+      <div className="employee-card-container">
+        <div className="one">
+          <h1>Tasks</h1>
+        </div>
+        {employee.tasks ? (
+          employee.tasks
+            .sort(function (a, b) {
+              return a.id - b.id;
+            })
+            .map((task) => {
+              return <TaskCard key={task.id} task={task} />;
+            })
+        ) : (
+          <h1>No Current Tasks</h1>
+        )}
       </div>
     </div>
   );

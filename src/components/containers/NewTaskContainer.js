@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 
 import NewTaskView from "../views/NewTaskView";
-import { addTaskThunk } from "../../store/thunks";
+import { addTaskThunk, fetchAllEmployeesThunk } from "../../store/thunks";
 
 class NewTaskContainer extends Component {
   constructor(props) {
@@ -62,6 +62,11 @@ class NewTaskContainer extends Component {
     });
   };
 
+  componentDidMount() {
+    console.log("props in new task container", this.props);
+    this.props.fetchEmployees();
+  }
+
   componentWillUnmount() {
     this.setState({ redirect: false, redirectId: null });
   }
@@ -76,15 +81,21 @@ class NewTaskContainer extends Component {
         handleChange={this.handleChange}
         handleSubmit={this.handleSubmit}
         error={this.state.error}
+        allEmployees={this.props.allEmployees}
       />
     );
   }
 }
-
+const mapState = (state) => {
+  return {
+    allEmployees: state.allEmployees,
+  };
+};
 const mapDispatch = (dispatch) => {
   return {
     addTask: (task) => dispatch(addTaskThunk(task)),
+    fetchEmployees: () => dispatch(fetchAllEmployeesThunk()),
   };
 };
 
-export default connect(null, mapDispatch)(NewTaskContainer);
+export default connect(mapState, mapDispatch)(NewTaskContainer);

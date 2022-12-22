@@ -55,12 +55,15 @@ const NewEmployeeView = (props) => {
 
           <label style={{ color: "#11153e", fontWeight: "bold" }}>
             Department:{" "}
+            <select name="department" onChange={(e) => handleChange(e)}>
+              <option value={""}></option>
+              <option value={"Operations"}>Operations</option>
+              <option value={"Finance"}>Finance</option>
+              <option value={"Sales"}>Sales</option>
+              <option value={"Marketing"}>Marketing</option>
+            </select>
           </label>
-          <input
-            type="text"
-            name="department"
-            onChange={(e) => handleChange(e)}
-          />
+
           <br />
           <br />
 

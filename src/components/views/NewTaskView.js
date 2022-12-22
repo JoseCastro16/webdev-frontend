@@ -2,8 +2,7 @@ import { Link } from "react-router-dom";
 import { BiEdit, BiTrash, BiArrowBack } from "react-icons/bi";
 
 const NewTaskView = (props) => {
-  const { handleChange, handleSubmit, error } = props;
-
+  const { handleChange, handleSubmit, error, allEmployees } = props;
   return (
     <div className="root">
       <div className="formContainer">
@@ -34,7 +33,7 @@ const NewTaskView = (props) => {
           <label style={{ color: "#11153e", fontWeight: "bold" }}>
             Description:{" "}
           </label>
-          <input
+          <textarea
             type="text"
             name="description"
             onChange={(e) => handleChange(e)}
@@ -44,30 +43,42 @@ const NewTaskView = (props) => {
 
           <label style={{ color: "#11153e", fontWeight: "bold" }}>
             Priority:{" "}
+            <select name="priority" onChange={(e) => handleChange(e)}>
+              <option value={""}></option>
+              <option value={"High"}>High</option>
+              <option value={"Medium"}>Medium</option>
+              <option value={"Low"}>Low</option>
+            </select>
           </label>
-          <input
-            type="text"
-            name="priority"
-            onChange={(e) => handleChange(e)}
-          />
+
           <br />
           <br />
 
           <label style={{ color: "#11153e", fontWeight: "bold" }}>
             Status :{" "}
+            <select name="status" onChange={(e) => handleChange(e)}>
+              <option value={""}></option>
+              <option value={"Completed"}>Completed</option>
+              <option value={"Not Completed"}>Not Completed</option>
+            </select>
           </label>
-          <input type="text" name="status" onChange={(e) => handleChange(e)} />
+
           <br />
           <br />
 
           <label style={{ color: "#11153e", fontWeight: "bold" }}>
-            EmployeeID :{" "}
+            Employee :{" "}
+            <select name="employeeId" onChange={(e) => handleChange(e)}>
+              <option value={""}></option>
+              {props.allEmployees?.map((employee) => {
+                return (
+                  <option value={employee.id} key={employee.id}>
+                    {employee.firstname + " " + employee.lastname}
+                  </option>
+                );
+              })}
+            </select>
           </label>
-          <input
-            type="text"
-            name="employeeId"
-            onChange={(e) => handleChange(e)}
-          />
           <br />
           <br />
 

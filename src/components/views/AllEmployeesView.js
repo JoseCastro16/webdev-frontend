@@ -14,8 +14,8 @@ const AllEmployeesView = (props) => {
           style={{ textDecoration: "none", color: "black" }}
         >
           <div className="add-container">
-            <BiPlus size={"3rem"} />
-            <h1>Add Employee</h1>
+            <BiPlus size={"2rem"} />
+            <h2>Add Employee</h2>
           </div>
         </Link>
       </div>
@@ -47,8 +47,8 @@ const AllEmployeesView = (props) => {
         style={{ textDecoration: "none", color: "black" }}
       >
         <div className="add-container">
-          <BiPlus size={"3rem"} />
-          <h1>Add Employee</h1>
+          <BiPlus size={"2rem"} />
+          <h2>Add Employee</h2>
         </div>
       </Link>
     </>

@@ -101,13 +101,21 @@ class EditEmployeeContainer extends Component {
 
           <label style={{ color: "black", fontWeight: "bold" }}>
             Department:{" "}
+            <select name="department" onChange={(e) => this.handleChange(e)}>
+              {this.props.employee.department ? (
+                <option value={this.props.employee.department}>
+                  {this.props.employee.department} (current)
+                </option>
+              ) : (
+                <option value=""></option>
+              )}
+              <option value={"Operations"}>Operations</option>
+              <option value={"Finance"}>Finance</option>
+              <option value={"Sales"}>Sales</option>
+              <option value={"Marketing"}>Marketing</option>
+            </select>
           </label>
-          <input
-            type="text"
-            name="department"
-            value={this.state.department}
-            onChange={(e) => this.handleChange(e)}
-          />
+
           <br />
 
           <button type="submit">Submit</button>

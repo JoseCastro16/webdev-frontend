@@ -24,7 +24,9 @@ const AllTasksView = (props) => {
 
   return (
     <div className="employee-card-container">
-      <h1 style={{ textDecoration: "underline" }}>All Tasks</h1>
+      <div className="one">
+        <h1>Tasks</h1>
+      </div>
       {props.allTasks
         .sort(function (a, b) {
           return a.id - b.id;
@@ -34,8 +36,8 @@ const AllTasksView = (props) => {
         })}
       <Link to={"/newtask"} style={{ textDecoration: "none", color: "black" }}>
         <div className="add-container">
-          <BiPlus size={"3rem"} />
-          <h1>Add Task</h1>
+          <BiPlus size={"2rem"} />
+          <h2>Add Task</h2>
         </div>
       </Link>
     </div>

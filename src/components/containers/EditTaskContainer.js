@@ -2,7 +2,12 @@ import { Component } from "react";
 import { connect } from "react-redux";
 import { Link, Redirect } from "react-router-dom";
 import { BiEdit, BiTrash, BiArrowBack } from "react-icons/bi";
-import { fetchTaskThunk, editTaskThunk } from "../../store/thunks";
+import {
+  fetchTaskThunk,
+  editTaskThunk,
+  fetchAllEmployeesThunk,
+  fetchEmployeeThunk,
+} from "../../store/thunks";
 
 class EditTaskContainer extends Component {
   constructor(props) {
@@ -20,6 +25,7 @@ class EditTaskContainer extends Component {
   componentDidMount() {
     //getting course ID from url
     this.props.fetchTask(this.props.match.params.id);
+    this.props.fetchEmployees();
     this.setState({
       description: this.props.task.description,
       priority: this.props.task.priority,
@@ -77,44 +83,72 @@ class EditTaskContainer extends Component {
           </Link>
         </div>
         <h1 style={{ fontSize: "2.5rem" }}>Edit Task</h1>
-        <form
-          style={{ textAlign: "center" }}
-          onSubmit={(e) => this.handleSubmit(e)}
-        >
+        <form onSubmit={(e) => this.handleSubmit(e)}>
           <label style={{ fontWeight: "bold" }}>Description: </label>
-          <input
+          <textarea
             type="text"
             name="description"
             value={this.state.description}
             onChange={(e) => this.handleChange(e)}
+            size
           />
           <br />
 
-          <label style={{ fontWeight: "bold" }}>Priority: </label>
-          <input
-            type="text"
-            name="priority"
-            value={this.state.priority}
-            onChange={(e) => this.handleChange(e)}
-          />
+          <label style={{ fontWeight: "bold" }}>
+            Priority:
+            <select
+              name="priority"
+              value={this.state.priority}
+              onChange={this.handleChange}
+            >
+              <option value={"Low"}>Low</option>
+              <option value={"Medium"}>Medium</option>
+              <option value={"High"}>High</option>
+            </select>
+          </label>
+
           <br />
 
-          <label style={{ fontWeight: "bold" }}>Status: </label>
-          <input
-            type="text"
-            name="status"
-            value={this.state.status}
-            onChange={(e) => this.handleChange(e)}
-          />
+          <label style={{ fontWeight: "bold" }}>
+            Status:
+            <select
+              name="status"
+              value={this.state.status}
+              onChange={(e) => this.handleChange(e)}
+            >
+              <option value={"Completed"}>Completed</option>
+              <option value={"Not Completed"}>Not Completed</option>
+            </select>
+          </label>
+
           <br />
 
-          <label style={{ fontWeight: "bold" }}>EmployeeId: </label>
-          <input
-            type="text"
-            name="employeeId"
-            value={this.state.employeeId}
-            onChange={(e) => this.handleChange(e)}
-          />
+          <label style={{ fontWeight: "bold" }}>
+            Employee :{" "}
+            <select name="employeeId" onChange={(e) => this.handleChange(e)}>
+              {this.props.task.employee ? (
+                <option value={this.state.employeeId}>
+                  {this.props.task.employee.firstname +
+                    " " +
+                    this.props.task.employee.lastname}{" "}
+                  (current)
+                </option>
+              ) : (
+                <option value={"Staff"}>Staff</option>
+              )}
+              {this.props.allEmployees?.map((employee) => {
+                if (employee.id !== this.state.employeeId) {
+                  return (
+                    <option value={employee.id} key={employee.id}>
+                      {employee.firstname + " " + employee.lastname}
+                    </option>
+                  );
+                }
+              })}
+            </select>
+          </label>
+
+          <br />
           <br />
 
           <button type="submit">Submit</button>
@@ -128,6 +162,8 @@ class EditTaskContainer extends Component {
 const mapState = (state) => {
   return {
     task: state.task,
+    allEmployees: state.allEmployees,
+    employee: state.employee,
   };
 };
 
@@ -135,6 +171,8 @@ const mapDispatch = (dispatch) => {
   return {
     editTask: (task) => dispatch(editTaskThunk(task)),
     fetchTask: (id) => dispatch(fetchTaskThunk(id)),
+    fetchEmployees: () => dispatch(fetchAllEmployeesThunk()),
+    fetchEmployee: (id) => dispatch(fetchEmployeeThunk(id)),
   };
 };
 

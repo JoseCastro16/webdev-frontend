@@ -4,14 +4,20 @@ const HomePageView = () => {
   return (
     <div className="homeContainer">
       <h1>Welcome to the Employee Management System</h1>
-      <h2>Take a look at our list of Employees:</h2>
-      <Link to={"/employees"} style={{ color: "black", fontSize: "2rem" }}>
-        All Employees
+      <h2>Take a look at our list of employees:</h2>
+      <Link
+        to={"/employees"}
+        style={{ color: "blue", fontSize: "2rem", textDecoration: "none" }}
+      >
+        Employees
       </Link>
       <br />
-      <h2>Take a look at our list of Tasks:</h2>
-      <Link to={"/tasks"} style={{ color: "black", fontSize: "2rem" }}>
-        All Tasks
+      <h2>Take a look at our list of tasks:</h2>
+      <Link
+        to={"/tasks"}
+        style={{ color: "blue", fontSize: "2rem", textDecoration: "none" }}
+      >
+        Tasks
       </Link>
     </div>
   );
