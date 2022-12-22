@@ -71,7 +71,7 @@ const NewTaskView = (props) => {
             Employee :{" "}
             <select name="employeeId" onChange={(e) => handleChange(e)}>
               <option value={""}></option>
-              {props.allEmployees?.map((employee) => {
+              {props.allEmployees.map((employee) => {
                 return (
                   <option value={employee.id} key={employee.id}>
                     {employee.firstname + " " + employee.lastname}
