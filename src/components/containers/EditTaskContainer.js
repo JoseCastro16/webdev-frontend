@@ -8,6 +8,7 @@ import {
   fetchAllEmployeesThunk,
   fetchEmployeeThunk,
 } from "../../store/thunks";
+import { CgAsterisk } from "react-icons/cg";
 
 class EditTaskContainer extends Component {
   constructor(props) {
@@ -82,7 +83,18 @@ class EditTaskContainer extends Component {
             <BiArrowBack color="black" size={40} />
           </Link>
         </div>
-        <h1 style={{ fontSize: "2.5rem" }}>Edit Task</h1>
+        <div className="formTitle">
+          <h2
+            style={{
+              fontWeight: "bold",
+              fontFamily: "Courier, sans-serif",
+              fontSize: "20px",
+              color: "#11153e",
+            }}
+          >
+            Edit Task
+          </h2>
+        </div>
         <form onSubmit={(e) => this.handleSubmit(e)}>
           <label style={{ fontWeight: "bold" }}>Description: </label>
           <textarea
@@ -92,6 +104,7 @@ class EditTaskContainer extends Component {
             onChange={(e) => this.handleChange(e)}
             size
           />
+          <br />
           <br />
 
           <label style={{ fontWeight: "bold" }}>
@@ -108,6 +121,7 @@ class EditTaskContainer extends Component {
           </label>
 
           <br />
+          <br />
 
           <label style={{ fontWeight: "bold" }}>
             Status:
@@ -122,6 +136,7 @@ class EditTaskContainer extends Component {
           </label>
 
           <br />
+          <br />
 
           <label style={{ fontWeight: "bold" }}>
             Employee :{" "}
@@ -134,10 +149,10 @@ class EditTaskContainer extends Component {
                   (current)
                 </option>
               ) : (
-                <option value={"Staff"}>Staff</option>
+                <option value={"Staff"}>Staff (current)</option>
               )}
               {this.props.allEmployees?.map((employee) => {
-                if (employee.id !== this.state.employeeId) {
+                if (employee.id !== this.props.employee.id) {
                   return (
                     <option value={employee.id} key={employee.id}>
                       {employee.firstname + " " + employee.lastname}
@@ -145,6 +160,9 @@ class EditTaskContainer extends Component {
                   );
                 }
               })}
+              {this.props.task.employee !== null && (
+                <option value={"Staff"}>Staff</option>
+              )}
             </select>
           </label>
 

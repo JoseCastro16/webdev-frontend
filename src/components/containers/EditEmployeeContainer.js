@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { Link, Redirect } from "react-router-dom";
 import { BiEdit, BiTrash, BiArrowBack } from "react-icons/bi";
 import { fetchEmployeeThunk, editEmployeeThunk } from "../../store/thunks";
+import { CgAsterisk } from "react-icons/cg";
 
 class EditEmployeeContainer extends Component {
   constructor(props) {
@@ -73,6 +74,18 @@ class EditEmployeeContainer extends Component {
             <BiArrowBack color="black" size={40} />
           </Link>
         </div>
+        <div className="formTitle">
+          <h2
+            style={{
+              fontWeight: "bold",
+              fontFamily: "Courier, sans-serif",
+              fontSize: "20px",
+              color: "#11153e",
+            }}
+          >
+            Edit Employee
+          </h2>
+        </div>
         <form
           style={{ textAlign: "center" }}
           onSubmit={(e) => this.handleSubmit(e)}
@@ -87,7 +100,7 @@ class EditEmployeeContainer extends Component {
             onChange={(e) => this.handleChange(e)}
           />
           <br />
-
+          <br />
           <label style={{ color: "black", fontWeight: "bold" }}>
             Last Name:{" "}
           </label>
@@ -98,7 +111,7 @@ class EditEmployeeContainer extends Component {
             onChange={(e) => this.handleChange(e)}
           />
           <br />
-
+          <br />
           <label style={{ color: "black", fontWeight: "bold" }}>
             Department:{" "}
             <select name="department" onChange={(e) => this.handleChange(e)}>
@@ -117,7 +130,7 @@ class EditEmployeeContainer extends Component {
           </label>
 
           <br />
-
+          <br />
           <button type="submit">Submit</button>
         </form>
       </div>

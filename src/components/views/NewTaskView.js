@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { BiEdit, BiTrash, BiArrowBack } from "react-icons/bi";
+import { CgAsterisk } from "react-icons/cg";
 
 const NewTaskView = (props) => {
   const { handleChange, handleSubmit, error, allEmployees } = props;
@@ -31,7 +32,7 @@ const NewTaskView = (props) => {
         </div>
         <form style={{ textAlign: "center" }} onSubmit={(e) => handleSubmit(e)}>
           <label style={{ color: "#11153e", fontWeight: "bold" }}>
-            Description:{" "}
+            <CgAsterisk color={"darkred"} /> Description:{" "}
           </label>
           <textarea
             type="text"
@@ -42,7 +43,7 @@ const NewTaskView = (props) => {
           <br />
 
           <label style={{ color: "#11153e", fontWeight: "bold" }}>
-            Priority:{" "}
+            <CgAsterisk color={"darkred"} /> Priority:{" "}
             <select name="priority" onChange={(e) => handleChange(e)}>
               <option value={""}></option>
               <option value={"High"}>High</option>
@@ -55,7 +56,7 @@ const NewTaskView = (props) => {
           <br />
 
           <label style={{ color: "#11153e", fontWeight: "bold" }}>
-            Status :{" "}
+            <CgAsterisk color={"darkred"} /> Status :{" "}
             <select name="status" onChange={(e) => handleChange(e)}>
               <option value={""}></option>
               <option value={"Completed"}>Completed</option>

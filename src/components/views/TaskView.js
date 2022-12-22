@@ -29,7 +29,7 @@ const TaskView = (props) => {
             <h1>{task.employee.firstname + " " + task.employee.lastname} </h1>
           </Link>
         ) : (
-          <h1>Unassigned</h1>
+          <h1>Staff</h1>
         )}
         <Link to={`/edittask/${task.id}`}>
           <BiEdit color="black" size={40} style={{ marginRight: 40 }} />

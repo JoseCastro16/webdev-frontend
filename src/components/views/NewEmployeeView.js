@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { BiEdit, BiTrash, BiArrowBack } from "react-icons/bi";
+import { CgAsterisk } from "react-icons/cg";
 
 const NewEmployeeView = (props) => {
   const { handleChange, handleSubmit, error } = props;
@@ -32,7 +33,7 @@ const NewEmployeeView = (props) => {
         </div>
         <form style={{ textAlign: "center" }} onSubmit={(e) => handleSubmit(e)}>
           <label style={{ color: "#11153e", fontWeight: "bold" }}>
-            First Name:{" "}
+            <CgAsterisk color={"darkred"} /> First Name:{" "}
           </label>
           <input
             type="text"
@@ -43,7 +44,7 @@ const NewEmployeeView = (props) => {
           <br />
 
           <label style={{ color: "#11153e", fontWeight: "bold" }}>
-            Last Name:{" "}
+            <CgAsterisk color={"darkred"} /> Last Name:{" "}
           </label>
           <input
             type="text"
