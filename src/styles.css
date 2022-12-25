@@ -57,6 +57,13 @@ body {
   display: flex;
   flex-direction: column;
 }
+.table-labels {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: solid black 1px;
+}
 
 .employee-card {
   display: flex;
@@ -64,7 +71,6 @@ body {
   justify-content: space-around;
   align-items: center;
   text-decoration: none;
-  border-radius: 1rem;
   margin-bottom: 1rem;
   border-bottom: solid black 1px;
 }

@@ -158,9 +158,6 @@ class EditTaskContainer extends Component {
                   </option>
                 );
               })}
-              {this.props.task.employee !== null && (
-                <option value={"Staff"}>Staff</option>
-              )}
             </select>
           </label>
 

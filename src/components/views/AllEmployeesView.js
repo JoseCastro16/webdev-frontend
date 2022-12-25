@@ -24,9 +24,17 @@ const AllEmployeesView = (props) => {
 
   return (
     <>
-      <div className="one">
-        <h1>Employees</h1>
-      </div>
+      <h1
+        style={{
+          fontWeight: "bold",
+          fontFamily: "Courier, sans-serif",
+          fontSize: "2.5rem",
+          color: "#11153e",
+        }}
+      >
+        Employees
+      </h1>
+
       <div className="employee-card-container">
         {props.allEmployees
           .sort(function (a, b) {

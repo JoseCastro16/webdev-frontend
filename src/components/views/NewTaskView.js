@@ -30,8 +30,11 @@ const NewTaskView = (props) => {
             New Task
           </h2>
         </div>
+        <div style={{ marginBottom: "1rem" }}>
+          <CgAsterisk color={"darkred"} /> fields are required
+        </div>
         <form style={{ textAlign: "center" }} onSubmit={(e) => handleSubmit(e)}>
-          <label style={{ color: "#11153e", fontWeight: "bold" }}>
+          <label style={{ fontWeight: "bold" }}>
             <CgAsterisk color={"darkred"} /> Description:{" "}
           </label>
           <textarea
@@ -42,7 +45,7 @@ const NewTaskView = (props) => {
           <br />
           <br />
 
-          <label style={{ color: "#11153e", fontWeight: "bold" }}>
+          <label style={{ fontWeight: "bold" }}>
             <CgAsterisk color={"darkred"} /> Priority:{" "}
             <select name="priority" onChange={(e) => handleChange(e)}>
               <option value={""}></option>
@@ -55,7 +58,7 @@ const NewTaskView = (props) => {
           <br />
           <br />
 
-          <label style={{ color: "#11153e", fontWeight: "bold" }}>
+          <label style={{ fontWeight: "bold" }}>
             <CgAsterisk color={"darkred"} /> Status :{" "}
             <select name="status" onChange={(e) => handleChange(e)}>
               <option value={""}></option>
@@ -67,7 +70,7 @@ const NewTaskView = (props) => {
           <br />
           <br />
 
-          <label style={{ color: "#11153e", fontWeight: "bold" }}>
+          <label style={{ fontWeight: "bold" }}>
             Employee :{" "}
             <select name="employeeId" onChange={(e) => handleChange(e)}>
               <option value={""}></option>

@@ -24,9 +24,17 @@ const AllTasksView = (props) => {
 
   return (
     <div className="employee-card-container">
-      <div className="one">
-        <h1>Tasks</h1>
-      </div>
+      <h1
+        style={{
+          fontWeight: "bold",
+          fontFamily: "Courier, sans-serif",
+          fontSize: "2.5rem",
+          color: "#11153e",
+        }}
+      >
+        Tasks
+      </h1>
+
       {props.allTasks
         .sort(function (a, b) {
           return a.id - b.id;

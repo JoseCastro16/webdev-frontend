@@ -31,8 +31,11 @@ const NewEmployeeView = (props) => {
             New Employee
           </h2>
         </div>
+        <div style={{ marginBottom: "1rem" }}>
+          <CgAsterisk color={"darkred"} /> fields are required
+        </div>
         <form style={{ textAlign: "center" }} onSubmit={(e) => handleSubmit(e)}>
-          <label style={{ color: "#11153e", fontWeight: "bold" }}>
+          <label style={{ fontWeight: "bold" }}>
             <CgAsterisk color={"darkred"} /> First Name:{" "}
           </label>
           <input
@@ -43,7 +46,7 @@ const NewEmployeeView = (props) => {
           <br />
           <br />
 
-          <label style={{ color: "#11153e", fontWeight: "bold" }}>
+          <label style={{ fontWeight: "bold" }}>
             <CgAsterisk color={"darkred"} /> Last Name:{" "}
           </label>
           <input
@@ -54,7 +57,7 @@ const NewEmployeeView = (props) => {
           <br />
           <br />
 
-          <label style={{ color: "#11153e", fontWeight: "bold" }}>
+          <label style={{ fontWeight: "bold" }}>
             Department:{" "}
             <select name="department" onChange={(e) => handleChange(e)}>
               <option value={""}></option>

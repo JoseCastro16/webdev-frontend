@@ -8,19 +8,39 @@ const TaskView = (props) => {
       <div
         style={{
           display: "flex",
-          justifyContent: "flex-start",
+          justifyContent: "space-between",
           marginLeft: 30,
+          marginRight: 30,
         }}
       >
         <Link to={`/tasks`}>
           <BiArrowBack color="black" size={40} />
         </Link>
+        <Link to={`/edittask/${task.id}`}>
+          <BiEdit color="#0096FF" size={40} />
+        </Link>
+        <Link to={"/tasks"}>
+          <BiTrash color="red" size={40} onClick={() => deleteTask(task.id)} />
+        </Link>
       </div>
       <div>
-        <h1 style={{ textDecoration: "underline" }}>{task.id}</h1>
+        <h1
+          style={{
+            fontWeight: "bold",
+            fontFamily: "Courier, sans-serif",
+            fontSize: "2.5rem",
+            color: "#11153e",
+          }}
+        >
+          Task {task.id}
+        </h1>
+        <h2 style={{ textDecoration: "underline" }}>Description</h2>
         <h1>{task.description}</h1>
+        <h2 style={{ textDecoration: "underline" }}>Status</h2>
         <h1> {task.status}</h1>
+        <h2 style={{ textDecoration: "underline" }}>Priority</h2>
         <h1> {task.priority}</h1>
+        <h2 style={{ textDecoration: "underline" }}>Employee</h2>
         {task.employee ? (
           <Link
             to={"/employee/" + task.employee.id}
@@ -31,16 +51,6 @@ const TaskView = (props) => {
         ) : (
           <h1>Staff</h1>
         )}
-        <Link to={`/edittask/${task.id}`}>
-          <BiEdit color="black" size={40} style={{ marginRight: 40 }} />
-        </Link>
-        <Link to={"/tasks"}>
-          <BiTrash
-            color="black"
-            size={40}
-            onClick={() => deleteTask(task.id)}
-          />
-        </Link>
       </div>
     </div>
   );
